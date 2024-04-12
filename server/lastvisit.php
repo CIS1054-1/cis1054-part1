@@ -19,7 +19,7 @@ function calculate_time($date){
     $difference = $now->format('U') - ($ago->format('U'));
     
     
-    echo "You first used this page .$difference seconds ago";
+    echo "You first used this page $difference seconds ago";
 }
 
 if(!isset($_SESSION['time'])){
