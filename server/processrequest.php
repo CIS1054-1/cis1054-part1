@@ -9,6 +9,7 @@
  * @version 1.0
  * @since 2023-04-12
  */
+session_start();
 
     // Determine the request method
     $requestMethod = $_SERVER['REQUEST_METHOD'];

@@ -9,11 +9,10 @@
 <body>
     <main>
         <div class="text-box">
-            <h1> Your Infos</h1>
             <?php
 
 /**
-* This fuction calculate the date and time of the first time the page was loaded
+* This function read the data inside the session, and print at screen
 *
 * @author Gioele Giunta & Carlos Alvarez
 * @version 1.0
@@ -22,20 +21,35 @@
 
 session_start();
 
-$username = $_SESSION['username'];
-$name = $_SESSION['firstname'];
-$surname = $_SESSION['surname'];
-$age = $_SESSION['age'];
-$bio =  $_SESSION['bio'];
+//Check if there is Session Data registered
+$status = !empty($_SESSION['username']) && !empty($_SESSION['firstname']) && !empty($_SESSION['surname']) && !empty($_SESSION['age']) && !empty($_SESSION['bio']);
 
-echo "<p><b>Username:</b> $username <br>";
-echo "<b>First name:</b> $name <br>";
-echo "<b>Surname:</b> $surname <br>";
-echo "<b>Age:</b> $age <br>";
-echo "<b>Bio:</b> $bio </p>";
+
+if($status){
+    echo "<h1> Your Infos</h1>";
+    $username = $_SESSION['username'];
+    $name = $_SESSION['firstname'];
+    $surname = $_SESSION['surname'];
+    $age = $_SESSION['age'];
+    $bio =  $_SESSION['bio'];
+    //Print infos
+    echo "<p><b>Username:</b> $username <br><b>First name:</b> $name <br><b>Surname:</b> $surname <br><b>Age:</b> $age <br><b>Bio:</b> $bio </p>";
+}else{
+    //Print error page
+    echo "<h1>Your informations could not be found <br>:(</h1>";
+}
+
+
+
 ?> 
         </div>
-        <img src="./img/avatar.png">
+        <?php
+        if($status){
+           echo "<img src=\"./img/avatar.png\">";
+        }else{
+            echo "<img src=\"./img/sad.jpeg\">";
+        }
+        ?>
     </main>
     <footer>
         <p>&copy; 2024 Gioele Giunta & Carlos Alvarez</p>
