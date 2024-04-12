@@ -32,7 +32,7 @@ if(!isset($_SESSION['time'])){
 }
 
 $difference = calculate_time($_SESSION['time']);
-echo "<h1>The last visit was: $difference seconds ago</h1>";
+echo "<h1>You first used this page $difference seconds ago</h1>";
 ?> 
         </div>
         <img src="./img/clock.png">

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Info</title>
+    <title>Your Infos</title>
     <link rel="stylesheet" href="./style/main.css">
 </head>
 <body>
     <main>
         <div class="text-box">
-            <h1> Your Info</h1>
+            <h1> Your Infos</h1>
             <?php
 
 /**
@@ -28,11 +28,11 @@ $surname = $_SESSION['surname'];
 $age = $_SESSION['age'];
 $bio =  $_SESSION['bio'];
 
-echo "<p>Username: $username </p>";
-echo "First name: $name </p>";
-echo "Surname: $surname </p>";
-echo "Age: $age </p>";
-echo "Bio: $bio </p>";
+echo "<p><b>Username:</b> $username <br>";
+echo "<b>First name:</b> $name <br>";
+echo "<b>Surname:</b> $surname <br>";
+echo "<b>Age:</b> $age <br>";
+echo "<b>Bio:</b> $bio </p>";
 ?> 
         </div>
         <img src="./img/avatar.png">
