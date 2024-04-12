@@ -1,11 +1,9 @@
-
-
-html>
+<html>
 <body>
 <?php
 
 /**
-* This fuction ....
+* This fuction calculate the date and time of the first time the page was loaded
 *
 * @author Carlos Alvarez
 * @version 1.0
@@ -17,8 +15,6 @@ function calculate_time($date){
     $now = new DateTime;
     $ago = new DateTime($date);
     $difference = $now->format('U') - ($ago->format('U'));
-    
-    
     echo "You first used this page .$difference seconds ago";
 }
 
@@ -27,6 +23,7 @@ if(!isset($_SESSION['time'])){
     }
 
 calculate_time($_SESSION['time']);
+
 ?> 
 </body>
 
